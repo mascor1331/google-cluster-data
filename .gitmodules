@@ -1,0 +1,3 @@
+[submodule "clusterdata-2011-2"]
+	path = clusterdata-2011-2
+	url = https://github.com/google/cluster-data.git
