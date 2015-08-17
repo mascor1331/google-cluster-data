@@ -32,7 +32,7 @@ def processFile(usageDataPath,pathMachineId,filenum,initTime,timeSlotTotalNum,re
 	timeSlot=0                                      # increase as the for loop continue
 	timeInterval=300000000.0                        # data trace ever five minutes(300s)
 	flag=2                                          # initial value of flag, used to break multiple loops	
-	t=datetime.datetime(2011,5,16,0,0)              # start time of this trace	
+	
 	delta=datetime.timedelta(minutes=5)			    # time interval
 	# time_id=zeros((timeSlotTotalNum,2),dtype='|S20')# time_id used to save time id pair
     
@@ -101,17 +101,15 @@ def processFile(usageDataPath,pathMachineId,filenum,initTime,timeSlotTotalNum,re
 	#savetxt(resultPath+'time_id.csv',time_id,delimiter=',',fmt='%s')
 
 
-# get time_id of the processed time, here as we started at 2011,05,16, 00:00:00
-# this function returns a .csv file named time_id.csv
-def getTimeIdMatrix(timeSlotTotalNum,resultPath):
-	t=datetime.datetime(2011,5,16,0,0)
+# get time_id of the processed time，this function returns a .csv file named time_id.csv
+def getTimeIdMatrix(timeSlotTotalNum,resultPath,startTime):
 	delta=datetime.timedelta(minutes=5)
 	realTime_id=zeros((timeSlotTotalNum,2),dtype='|S20')
 	for timeSlot in range(timeSlotTotalNum):
 		realTime_id[timeSlot,0]=str(timeSlot+1)
-		strtime=t.strftime("%Y-%m-%d %H:%M:%S")
+		strtime=startTime.strftime("%Y-%m-%d %H:%M:%S")
 		realTime_id[timeSlot,1]=strtime
-		t=t+delta
+		startTime=startTime+delta
 	savetxt(resultPath+'time_id.csv',realTime_id,delimiter=',',fmt='%s')
 
 
