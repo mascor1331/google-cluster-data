@@ -101,7 +101,7 @@ def processFile(usageDataPath,pathMachineId,filenum,initTime,timeSlotTotalNum,re
 	#savetxt(resultPath+'time_id.csv',time_id,delimiter=',',fmt='%s')
 
 
-# get time_id of the processed time，this function returns a .csv file named time_id.csv
+# get time_id of the processed time, this function returns a .csv file named time_id.csv
 def getTimeIdMatrix(timeSlotTotalNum,resultPath,startTime):
 	delta=datetime.timedelta(minutes=5)
 	realTime_id=zeros((timeSlotTotalNum,2),dtype='|S20')
