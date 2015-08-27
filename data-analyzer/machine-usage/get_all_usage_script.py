@@ -8,7 +8,7 @@ import time
 #=============get_hoursample_usage_script==============#
 
 #Variable Initialization
-timeSlotTotalNum=9000             			   # user-define value (here we set 8928 > 31*24*12 ) 
+timeSlotTotalNum=8352             			   # user-define value (here we set 8352=29*24*12 ) 
 filenum=arange(0,500,1)          			   # filename that would be looped
 initTime=600000000;    		     		       # start time of the third week=600000000 
 startTime=datetime.datetime(2011,5,1,0,0)      # real time             
